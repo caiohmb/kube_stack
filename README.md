@@ -10,3 +10,5 @@ AqVdxDeKTPNezOnk
 
 apply minio operator
 kubectl apply -f .\infra\src\app_manifests\deepstorage\minio-operator.yml
+
+apply minio tenant
