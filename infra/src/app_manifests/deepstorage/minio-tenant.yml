@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/caiohmb/kube_stack.git'
-    path: infra/src/helm_charts/minio/operator
+    path: infra/src/helm_charts/minio/tenant
     targetRevision: HEAD
     helm:
       valueFiles:
