@@ -10,4 +10,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: minio-operator
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.operator.namespace | default .Release.Namespace }}

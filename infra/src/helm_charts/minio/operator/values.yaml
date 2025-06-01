@@ -185,3 +185,6 @@ operator:
       cpu: 200m
       memory: 256Mi
       ephemeral-storage: 500Mi
+  ###
+  # Namespace where all the resources will be created
+  namespace: deepstorage
