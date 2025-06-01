@@ -13,7 +13,7 @@ spec:
       valueFiles:
         - values.yaml
   destination:
-      name: 'minikube'
+      name: 'in-cluster'
       namespace: deepstorage
       server: ''
   syncPolicy:
