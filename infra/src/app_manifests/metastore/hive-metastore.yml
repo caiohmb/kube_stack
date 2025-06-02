@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/caiohmb/kube_stack.git'
-    path: infra/src/helm-charts/hive-metastore
+    path: infra/src/helm_charts/hive-metastore
     targetRevision: HEAD
     helm:
       valueFiles:
