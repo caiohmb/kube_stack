@@ -142,6 +142,7 @@ connections:
     host: "{{ .Release.Name }}-postgresql"
     ## @param connections.database.port [default: 5432] Database port
     port: 5432
+    driver: org.postgresql.Driver
 
 # Update hive-site.xml file
 conf:
@@ -149,7 +150,7 @@ conf:
   hiveSite:
     # Define tmp folder for hdfs since we only have metastore here.
     # If not set, default hive.metastore.warehouse.dir is default to: "hdfs://{{.Release.Name}}-hdfs:8020/user/hive/warehouse"
-    hive.metastore.warehouse.dir: "file:///tmp"
+    hive.metastore.warehouse.dir: "s3a://metastore/"
   ## @param conf.hiveSiteSecret Name of secret containing extra hive-site configuration. Will be mounted as hivemetastore-site.xml file
   hiveSiteSecret: ""
   ## @param conf.hiveSiteSecretKey Key in secret containing extra hive-site configuration
