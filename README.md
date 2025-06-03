@@ -1,6 +1,12 @@
 # kube_stack
 Modern Data Stack on Kubernetes
 
+port foward
+minio
+kubectl port-forward svc/minio-tenant-console -n deepstorage 9443:9443
+argocd
+port-forward svc/argocd-server -n argocd 8080:443
+
 argo-cd
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
