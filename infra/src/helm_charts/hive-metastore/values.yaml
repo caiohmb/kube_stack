@@ -148,6 +148,10 @@ connections:
 conf:
   ## @param conf.hiveSite [object] Set of hive-site.xml configuration
   hiveSite:
+    javax.jdo.option.ConnectionDriverName: org.postgresql.Driver
+    javax.jdo.option.ConnectionURL: jdbc:postgresql://hive-metastore-postgresql:5432/metastore
+    javax.jdo.option.ConnectionUserName: hive
+    javax.jdo.option.ConnectionPassword: hive
     # Define tmp folder for hdfs since we only have metastore here.
     # If not set, default hive.metastore.warehouse.dir is default to: "hdfs://{{.Release.Name}}-hdfs:8020/user/hive/warehouse"
     hive.metastore.warehouse.dir: "s3a://metastore/"
