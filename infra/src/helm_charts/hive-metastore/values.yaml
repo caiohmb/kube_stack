@@ -135,7 +135,7 @@ connections:
     ## @param connections.database.username [default: hive] Database username
     username: hive
     ## @param connections.database.password Database password. Note that one can use 'DATABASE_PASSWORD' environment variable instead.
-    password: ""
+    password: hive
     ## @param connections.database.database [default: metastore] Hive database name
     database: metastore
     ## @param connections.database.host Databas host
