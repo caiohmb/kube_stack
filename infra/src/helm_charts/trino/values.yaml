@@ -390,6 +390,16 @@ catalogs:
   tpcds: |
     connector.name=tpcds
     tpcds.splits-per-node=4
+  minio: |
+    connector.name=hive
+    hive.metastore.uri=thrift://hive-metastore.metastore.svc.cluster.local:9083
+    hive.s3.aws-access-key=minio
+    hive.s3.aws-secret-key=minio123
+    hive.s3.endpoint=http://minio.deepstorage.svc.cluster.local
+    hive.s3.path-style-access=true
+    hive.s3.ssl.enabled=false
+    hive.non-managed-table-writes-enabled=true
+    hive.allow-drop-table=true
 # catalogs -- Configure
 # [catalogs](https://trino.io/docs/current/installation/deployment.html#catalog-properties).
 # @raw
