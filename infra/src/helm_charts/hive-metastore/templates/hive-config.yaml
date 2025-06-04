@@ -48,7 +48,7 @@ data:
 
         <property>
           <name>hive.metastore.uris</name>
-          <value>thrift://localhost:{{- .Values.service.port }}</value>
+          <value>thrift://0.0.0.0:{{- .Values.service.port }}</value>
         </property>
 
         <property>
