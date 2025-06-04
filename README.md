@@ -18,7 +18,7 @@ kubectl get secret argocd-initial-admin-secret -n argocd `
   -o jsonpath="{.data.password}" | ForEach-Object { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) }
 
 senha-atual:
-Ixpof6dSiojHwVCr
+eAA-Us9ddse2gQjP
 
 apply minio operator
 kubectl apply -f .\infra\src\app_manifests\deepstorage\minio-operator.yml
