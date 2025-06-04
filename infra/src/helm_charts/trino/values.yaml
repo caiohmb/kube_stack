@@ -392,7 +392,8 @@ catalogs:
     tpcds.splits-per-node=4
   minio: |
     connector.name=hive
-    hive.metastore.uri=thrift://hive-metastore.metastore.svc.Cluster.local:9083
+    hive.metastore=file
+    hive.s3-file-system-type=TRINO
 
     fs.native-s3.enabled=true
     s3.aws-access-key=minio
