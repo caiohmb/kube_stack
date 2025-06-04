@@ -393,7 +393,7 @@ catalogs:
   minio: |
     connector.name=hive
     hive.metastore=file
-    hive.s3-file-system-type=TRINO
+    hive.metastore.catalog.dir=s3://trino/
 
     fs.native-s3.enabled=true
     s3.aws-access-key=minio
