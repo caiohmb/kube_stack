@@ -48,7 +48,7 @@ data:
 
         <property>
           <name>hive.metastore.uris</name>
-          <value>thrift://0.0.0.0:{{- .Values.service.port }}</value>
+          <value>thrift://{{ include "hive-metastore.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{- .Values.service.port }}</value>
         </property>
 
         <property>
