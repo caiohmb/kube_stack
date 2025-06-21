@@ -112,3 +112,14 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+conf:
+  hiveSite:
+    hive_metastore_uris: thrift://hive-metastore:9083
+    hive.metastore.warehouse.dir: s3a://metastore/warehouse/
+    fs.s3a.impl: org.apache.hadoop.fs.s3a.S3AFileSystem
+    fs.s3a.access.key: minio
+    fs.s3a.secret.key: minio123
+    fs.s3a.endpoint: http://minio.deepstorage.svc.cluster.local
+    fs.s3a.path.style.access: true
+    fs.s3a.connection.ssl.enabled: false
