@@ -152,9 +152,25 @@ conf:
     javax.jdo.option.ConnectionURL: jdbc:postgresql://hive-metastore-postgresql:5432/metastore
     javax.jdo.option.ConnectionUserName: hive
     javax.jdo.option.ConnectionPassword: hive
-    # Define tmp folder for hdfs since we only have metastore here.
-    # If not set, default hive.metastore.warehouse.dir is default to: "hdfs://{{.Release.Name}}-hdfs:8020/user/hive/warehouse"
-    hive.metastore.warehouse.dir: "s3a://metastore/"
+    # Define warehouse directory for S3/MinIO
+    hive.metastore.warehouse.dir: "s3a://data-lake/warehouse"
+    # Enable S3A filesystem
+    fs.s3a.impl: "org.apache.hadoop.fs.s3a.S3AFileSystem"
+    fs.s3a.endpoint: "http://minio.deepstorage.svc.cluster.local:9000"
+    fs.s3a.access.key: "minio"
+    fs.s3a.secret.key: "minio123"
+    fs.s3a.path.style.access: "true"
+    fs.s3a.connection.ssl.enabled: "false"
+    # Hive metastore configuration
+    hive.metastore.schema.verification: "false"
+    hive.metastore.schema.verification.record.version: "false"
+    hive.metastore.warehouse.dir: "s3a://data-lake/warehouse"
+    hive.metastore.uris: "thrift://0.0.0.0:9083"
+    hive.metastore.thrift.port: "9083"
+    hive.metastore.thrift.bind.host: "0.0.0.0"
+    # Iceberg support
+    hive.iceberg.enabled: "true"
+    hive.iceberg.catalog.type: "hive"
   ## @param conf.hiveSiteSecret Name of secret containing extra hive-site configuration. Will be mounted as hivemetastore-site.xml file
   hiveSiteSecret: ""
   ## @param conf.hiveSiteSecretKey Key in secret containing extra hive-site configuration
@@ -164,7 +180,7 @@ conf:
 ## ref: https://hadoop.apache.org/docs/current/hadoop-aws/tools/hadoop-aws/index.html
 objectStore:
   ## @param objectStore.sslEnabled [default: false] Value of fs.s3a.connection.ssl.enabled in hive-site.xml file
-  sslEnabled: true
+  sslEnabled: false
 
   ## @param objectStore.endpoint Value of fs.s3a.endpoint in hive-site.xml file
   endpoint: http://minio.deepstorage.svc.cluster.local:9000

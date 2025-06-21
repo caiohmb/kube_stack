@@ -293,6 +293,9 @@ tenant:
     - name: landing
     - name: metastore
     - name: trino
+    - name: data-lake
+      region: us-east-1
+      objectLock: false
   ###
   # Array of Kubernetes secrets from which the Operator generates MinIO users during tenant provisioning.
   #
