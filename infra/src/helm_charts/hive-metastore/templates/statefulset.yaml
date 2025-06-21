@@ -28,7 +28,7 @@ spec:
         command:
         - "/bin/sh"
         - "-c"
-        - "/opt/apache-hive-metastore-3.0.0-bin/bin/hive --service metastore"
+        - "/opt/hive/bin/hive --service metastore"
         env:
           - name: METASTORE_DB_HOSTNAME
             value: {{ .Release.Name }}-mariadb
