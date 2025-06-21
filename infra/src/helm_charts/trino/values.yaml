@@ -401,12 +401,6 @@ catalogs:
     s3.endpoint=http://minio.deepstorage.svc.cluster.local:9000
     s3.path-style-access=true
     
-    # Hive configuration
-    hive.allow-drop-table=true
-    hive.allow-rename-table=true
-    hive.allow-add-column=true
-    hive.allow-drop-column=true
-    hive.allow-rename-column=true
     
   iceberg: |
     connector.name=iceberg
