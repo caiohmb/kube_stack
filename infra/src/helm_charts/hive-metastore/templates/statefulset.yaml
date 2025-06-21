@@ -25,10 +25,10 @@ spec:
       - name: metastore
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-        command:
-        - "/bin/sh"
-        - "-c"
-        - "/opt/hive/bin/hive --service metastore"
+        # command:
+        # - "/bin/sh"
+        # - "-c"
+        # - "/opt/hive/bin/hive --service metastore"
         env:
           - name: METASTORE_DB_HOSTNAME
             value: {{ .Release.Name }}-mariadb
